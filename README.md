@@ -205,11 +205,15 @@ input_file_name = 'Bp m01 input.xlsx'
 ### ***Example Output for a particular Antigen and Group with 8 mice:***
 <br>
 
-![Example Output](example_output.png)
+![Example Output](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/Antigen%201%20-%20(Group%20C)%20%5BA415-A750%5D%202023-02-17.png)
 
 
 ### ***Example Output for all Antigens and Groups:***
 <br>
 
-[Example Figure](example_output_all_groups_and_antigens.html)
+[Example Figure](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/groups%20x%20antigens%20(individual%20mice)%20Log%20A415_minus_A750%202023-02-17.html)
 
+### ***Example Spreadsheet with calculated antibody titers:***
+<br>
+
+[Example Spreadsheet](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/Bp%20m01%20serum%20antibody%20-%20Data%20Formatted%20for%20GraphPad%20Prism%202023-02-17.xlsx)
