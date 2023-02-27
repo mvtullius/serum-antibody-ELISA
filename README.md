@@ -45,7 +45,26 @@ experiments[ExperimentName.Bp_m02] = Experiment(ExperimentName.Bp_m02,
 ```
 <br>
 
+# Edit this cell to select the desired experiment for processing.
+<br>
+
+```python
+exp = experiments[ExperimentName.EXAMPLE]
+
+EXPERIMENT_NAME = exp.name
+INPUT_DIRECTORY = exp.input_directory
+INPUT_FILE_NAME = exp.input_file_name
+
+CUTOFF = 0.05
+
+print(f'\n{EXPERIMENT_NAME=}\n{INPUT_DIRECTORY=}\n{INPUT_FILE_NAME=}\n{CUTOFF=}\n')
+```
+<br>
+
+
 ### ***Directories Sheet from example input file:***
+
+[Example Input Spreadsheet](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/example%20input.xlsx)
 <br>
 
 | Key                | Value                                                                 |
