@@ -2,7 +2,7 @@
 This python notebook processes raw data from 96-well plate serum antibody ELISAs to visualize the data and calculate antibody titers.
 <br>
 
-## You need to edit one cell in the notebook (see below) to incude your input directory and input file, which contains all of the parameters for the experiment.
+# Edit this cell to incude your input directory and input file, which contains all of the parameters for the experiment.
 <br>
 
 ### The input file (Excel Spreadsheet) must have the following sheets:
@@ -15,12 +15,33 @@ This python notebook processes raw data from 96-well plate serum antibody ELISAs
 <br><br>
 
 ```python
-# input_directory = r'INPUT DIRECTORY GOES HERE'
-# input_file_name = 'INPUT FILE GOES HERE'
+class ExperimentName(Enum):
+    EXAMPLE = auto()
+    Bp_m01 = auto()
+    Bp_m02 = auto()
 
-# Example
-input_directory = './example'
-input_file_name = 'Bp m01 input.xlsx'
+class Experiment:
+    
+    def __init__(self, name, input_directory, input_file_name):
+        
+        self.name = name
+        self.input_directory = input_directory
+        self.input_file_name = input_file_name
+        
+experiments = {}
+ 
+experiments[ExperimentName.EXAMPLE] = Experiment(ExperimentName.EXAMPLE,
+                                                 './example',
+                                                 'example input.xlsx')
+
+experiments[ExperimentName.Bp_m01] = Experiment(ExperimentName.Bp_m01,
+                                                r'C:\Users\mitullius\Notebook\2023\Bp vaccine paper\Re-analysis of Serum Ab\Bp_m01',
+                                                'Bp m01 serum antibody - plate maps 2021 05-05.xlsx')
+
+experiments[ExperimentName.Bp_m02] = Experiment(ExperimentName.Bp_m02,
+                                                r'C:\Users\mitullius\Notebook\2023\Bp vaccine paper\Re-analysis of Serum Ab\Bp_m02',
+                                                'Bp m02 serum antibody - plate maps 2021 03-22.xlsx')
+
 ```
 <br>
 
@@ -31,8 +52,8 @@ input_file_name = 'Bp m01 input.xlsx'
 |--------------------|-----------------------------------------------------------------------|
 | Raw Data Directory | ./raw data                                                            |
 | Output Directory   | ./output {DATE}                                                       |
-| Output File        | Bp m01 serum antibody - Data Formatted for GraphPad Prism {DATE}.xlsx |
-| Plates File        | Bp m01 serum antibody - All Plates {DATE}.xlsx                        |
+| Output File        | EXAMPLE serum antibody - Data Formatted for GraphPad Prism {DATE}.xlsx |
+| Plates File        | EXAMPLE serum antibody - All Plates {DATE}.xlsx                        |
 <br>
 
 ### ***Conditions Sheet from example input file:***
@@ -205,15 +226,15 @@ input_file_name = 'Bp m01 input.xlsx'
 ### ***Example Output for a particular Antigen and Group with 8 mice:***
 <br>
 
-![Example Output](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/Antigen%201%20-%20(Group%20C)%20%5BA415-A750%5D%202023-02-17.png)
+![Example Output](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-27/Antigen%201%20-%20(Group%20C)%20%5BA415-A750%5D%202023-02-27.png)
 
 
-### ***Example Output for all Antigens and Groups:***
+### ***Example Output (html file) for all Antigens and Groups:***
 <br>
 
-[Example Figure](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/groups%20x%20antigens%20(individual%20mice)%20Log%20A415_minus_A750%202023-02-17.html)
+[Example Figure](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-27/EXAMPLE%20groups%20x%20antigens%20(individual%20mice)%20Log%20A415_minus_A750%202023-02-27.html)
 
 ### ***Example Spreadsheet with calculated antibody titers:***
 <br>
 
-[Example Spreadsheet](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-17/Bp%20m01%20serum%20antibody%20-%20Data%20Formatted%20for%20GraphPad%20Prism%202023-02-17.xlsx)
+[Example Spreadsheet](https://github.com/mvtullius/serum-antibody-ELISA/blob/main/example/output%202023-02-27/EXAMPLE%20serum%20antibody%20-%20Data%20Formatted%20for%20GraphPad%20Prism%202023-02-27.xlsx)
